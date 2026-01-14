@@ -33,7 +33,7 @@ def scrape_sites(site_name, URL, driver, price_thresh, rooms, b_rooms):
             break
 
         driver.get(current_url)
-        time.sleep(random.uniform(3, 7))
+        time.sleep(random.uniform(3, 5))
 
         if page > 1 and driver.current_url.rstrip('/') == URL.rstrip('/'):
             break
@@ -51,7 +51,7 @@ def scrape_sites(site_name, URL, driver, price_thresh, rooms, b_rooms):
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         else:
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(random.uniform(3, 7))
+        time.sleep(random.uniform(3, 5))
         soup = BeautifulSoup(driver.page_source, 'html.parser')
 
         if site_name.lower() == "redfin":
