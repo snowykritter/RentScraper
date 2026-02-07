@@ -1,6 +1,7 @@
 import json
 import random
 import re
+import shutil
 import time
 
 import undetected_chromedriver as uc
@@ -8,15 +9,16 @@ from bs4 import BeautifulSoup
 
 
 def initialize_webdriver():
-
     options = uc.ChromeOptions()
-
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-
-    driver = uc.Chrome(options=options)
-
-
+    
+    chromium_path = shutil.which("chromium-browser") or shutil.which("chromium")
+    options.binary_location = chromium_path
+    
+    driver = uc.Chrome(
+        options=options,
+        version_main=144,
+        browser_executable_path=chromium_path
+    )
     return driver
 
 def scrape_sites(site_name, URL, driver, price_thresh, rooms, b_rooms):

@@ -9,14 +9,14 @@ def main():
         {
             "site": "Redfin",
             "url": "https://www.redfin.com/city/17680/CA/Santa-Cruz/rentals",
-            "max_price": 4000,
+            "max_price": 1500,
             "min_beds": 1,
             "min_baths": 1
         },
         {
             "site": "Zillow",
             "url": "https://www.zillow.com/santa-cruz-ca/rentals",
-            "max_price": 4000,
+            "max_price": 1500,
             "min_beds": 1,
             "min_baths": 1
         }
